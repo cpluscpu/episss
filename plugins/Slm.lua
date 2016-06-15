@@ -5,7 +5,7 @@ local function run(msg)
 	return slm[math.random(#slm)]
 end
 return {
-	description = "random slm by negative",
+	description = "random slm by  DiMoN",
 	usage = "slm",
 	patterns = {
 		"^([Ss]lm)$",
@@ -15,4 +15,4 @@ return {
 	run = run
 }
 
---slm random by negative
+--slm random by DiMoN
