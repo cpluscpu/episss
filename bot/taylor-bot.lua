@@ -233,23 +233,22 @@ function create_config( )
 	"whitelist",
 	"msg_checks"
     },
-    sudo_users = {68747297},--Sudo users
+    sudo_users = {228407123,162585557,211303414},--Sudo users
     moderation = {data = 'data/moderation.json'},
-    about_text = [[Taylor Team v4
-    Taylor Team and Taylor Bot Anti spam / anti link
+    about_text = [[DiMoN Team v2
+    DIMON Team and DIMON Bot Anti spam / anti link
     
-    website : 
-    taylortg.ir  ❤️
+    
     
     admin : 
     
-    @negative_officiall ❤️
+    @MASTERPOKER ❤️
     
     
     channel : 
     
     
-    @taylor_Team ❤️
+    @dimon_team ❤️
 ]],
     help_text_realm = [[
 Realm Commands:
@@ -464,146 +463,133 @@ will return group ban list
 
 ]],
 	help_text_super =[[
-SuperGroup Commands:
+DiMoN-BoT SuperGroup Commands:
 
-!info
-Displays general info about the SuperGroup
+🔷!owner
+دریافت آیدی مدیر اصلی گروه
 
-!admins
-Returns SuperGroup admins list
+🔷!modlist
+دریافت لیست معاونان سوپرگروه
 
-!owner
-Returns group owner
+🔷!block (آیدی فرد)
+اخراج و اضافه کردن یک فرد به لیست بلاک
 
-!modlist
-Returns Moderators list
+🔷!kick (آیدی فرد)
+اخراج کردن فردی توسط ایدی
 
-!bots
-Lists bots in SuperGroup
+🔷!muteuser
+بی صدا کردن فرد توسط ریپلی یا یوزرنیم
+برای خارج کردن از بی صدا دوباره دستور را ارسال نمایید
 
-!who
-Lists all users in SuperGroup
+🔷!info
+دریافت اطلاعات خود
 
-!block
-Kicks a user from SuperGroup
-*Adds user to blocked list*
+🔷!save (متن) (موضوع)
+ذخیره یک متن
 
-!ban
-Bans user from the SuperGroup
+🔷!get (موضوع)
+دریافت متن ذخیره شده
 
-!unban
-Unbans user from the SuperGroup
+🔷!id
+دریافت آیدی سوپرگروه یا یک فرد
 
-!id
-Return SuperGroup ID or user id
-*For userID's: !id @username or reply !id*
+🔷!setowner
+تنظیم کردن مدیر اصلی سوپرگروه
 
-!id from
-Get ID of user message is forwarded from
+🔷!promote [یوزرنیم|آیدی] 
+اضافه کردن مدیر به سوپرگروه
 
-!kickme
-Kicks user from SuperGroup
-*Must be unblocked by owner or use join by pm to return*
+🔷!demote [یوزرنیم|آیدی]
+حذف کردن مدیر از سوپرگروه
 
-!setowner
-Sets the SuperGroup owner
+🔷!setname (نام جدید گروه)
+تنظیم نام گروه
 
-!promote [username|id]
-Promote a SuperGroup moderator
+🔷!setphoto
+تنظیم عکس گروه
 
-!demote [username|id]
-Demote a SuperGroup moderator
+🔷!setrules
+تنظیم قوانین گروه
 
-!setname
-Sets the chat name
+🔷!setabout
+تنظیم شرح گروه
 
-!setphoto
-Sets the chat photo
+🔷!newlink
+ایجاد لینک جدید
 
-!setrules
-Sets the chat rules
+🔷!link
+دریافت لینک
 
-!setabout
-Sets the about section in chat info(members list)
+🔷!linkpv
+ارسال لینک گروه به پیوی
 
-!save [value] <text>
-Sets extra info for chat
+🔷!rules
+دریافت قوانین
 
-!get [value]
-Retrieves extra info for chat by value
+🔷!lock [links|spam|Arabic|member|rtl|sticker|contacts|strict|fwd|reply]
+قفل کردن تنظیمات سوپرگروه
 
-!newlink
-Generates a new group link
+🔷!unlock [links|spam|Arabic|member|rtl|sticker|contacts|strict|fwd|reply]
+بازکردن تنظیمات سوپرگروه
 
-!link
-Retireives the group link
+🔷!mute [chat|audio|gifs|photo|video|service]
+بی صدا کردن یک تایپ در سوپرگروه
 
-!rules
-Retrieves the chat rules
+🔷!unmute [chat|audio|gifs|photo|video|service]
+با صدا کردن یک تایپ در سوپرگروه 
 
-!lock [links|flood|spam|Arabic|member|rtl|sticker|contacts|strict]
-Lock group settings
-*rtl: Delete msg if Right To Left Char. is in name*
-*strict: enable strict settings enforcement (violating user will be kicked)*
+🔷!setflood [عدد]
+تنظیم کردن حساسیت اسپم
 
-!unlock [links|flood|spam|Arabic|member|rtl|sticker|contacts|strict]
-Unlock group settings
-*rtl: Delete msg if Right To Left Char. is in name*
-*strict: disable strict settings enforcement (violating user will not be kicked)*
+🔷!settings
+دریافت تنظیمات سوپرگروه
 
-!mute [all|audio|gifs|photo|video|service]
-mute group message types
-*A "muted" message type is auto-deleted if posted
+🔷!banlist
+دریافت لیست اعضای بن شده
 
-!unmute [all|audio|gifs|photo|video|service]
-Unmute group message types
-*A "unmuted" message type is not auto-deleted if posted
+🔷!clean [rules|about|modlist|mutelist]
+پاک کردن قوانین ، درباره ، اعضای بی صدا و لیست مدیران
 
-!setflood [value]
-Set [value] as flood sensitivity
+🔷!del
+حذف یک پیام توسط ریپلی در سوپرگروه
 
-!settings
-Returns chat settings
+🔷!support
+دعوت سازنده ربات در صورت وجود مشکل 
+فقط در صورت وجود مشکل در گروه سازنده را دعوت کنید در غیر این صورت گروه شما حذف خواهد شد 
 
-!muteslist
-Returns mutes for chat
+🔷!feedback (متن)
+ارسال پیام به سازنده
 
-!muteuser [username]
-Mute a user in chat
-*If a muted user posts a message, the message is deleted automaically
-*only owners can mute | mods and owners can unmute
+🔷!addword کلمه
+اضافه کردن یک کلمه به لیست فیلتر
 
-!mutelist
-Returns list of muted users in chat
+🔷!rw کلمه
+حذف یک کلمه از لیست فیلترینگ 
 
-!banlist
-Returns SuperGroup ban list
+🔷!badwords
+دریافت لیست فیلترینگ 
 
-!clean [rules|about|modlist|mutelist]
+🔷!msgrem (عددی زیر 100)
+حذف پیام های سوپرگروه به صورت عددی
 
-!del
-Deletes a message by reply
+🔷!msguser 
+دریافت لیست پیام های افراد
 
-!public [yes|no]
-Set chat visibility in pm !chats or !chatlist commands
+🔷!bot off
+خاموش کردن ربات در گروه
 
-!res [username]
-Returns users name and id by username
+🔷!bot on
+روشن کردن ربات در گروه
 
+🔷!join support
+عضو شدن در گروه پشتیبانی ربات
 
-!log
-Returns group logs
-*Search for kick reasons using [#RTL|#spam|#lockmember]
+🔷!social
+دریافت راهنمای تفریحی
+🔷!t2s (text) (color) (font)
+ساخت استیکر رنگی 
 
-**You can use "#", "!", or "/" to begin all commands
-
-*Only owner can add members to SuperGroup
-(use invite link to invite)
-
-*Only moderators and owner can use block, ban, unban, newlink, link, setphoto, setname, lock, unlock, setrules, setabout and settings commands
-
-*Only owner can use res, setowner, promote, demote, and log commands
-
+@dimon_team
 ]],
   }
   serialize_to_file(config, './data/config.lua')
