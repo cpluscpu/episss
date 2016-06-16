@@ -565,10 +565,8 @@ end
 		end
 	end
   local settings = data[tostring(target)]['settings']
-  local text = "تنظیمات سوپر گروه💚\nقفل لینک: "..settings.lock_link.."\n قفل  پیام های پشت سرم🔧  :"..settings.flood.."\nتعداد مجاز پیام های پشت سر هم🔧 :"..NUM_MSG_MAX.."\nقفل اسپم پیام های طولانی🔧 :"..settings.lock_spam.."\nقفل عربی و فارسی🔧:"..settings.lock_arabic.."\nقفل اعضا🔧 :"..settings.lock_member.."\nقفل پیام های از راست به چپ🔧 :"..settings.lock_rtl.."\nپاک کننده پیام های جوین و لفت 🔧 :"..settings.lock_tgservice.."\nقفل استیکر 🔧 :"..settings.lock_sticker.."\nهمگانی بودن گروه 🔧 :"..settings.public.."\nوضعیت امنیت بالا 🔧 :"..settings.strict
-  return text
-end
-
+  local text = 🔶SuperGroup Name : "..msg.to.print_name.."\n 🔷requester: @"..msg.from.username.."\n➖➖➖➖➖➖➖➖➖➖➖\n ⚙SuperGroup settings⚙:\n⚙ Lock links : "..settings.lock_link.."\n ⚙Lock flood: "..settings.flood.."\n⚙Flood sensitivity : "..NUM_MSG_MAX.."\n ⚙Lock spam: "..settings.lock_spam.."\n⚙Lock Arabic: "..settings.lock_arabic.."\n⚙ Lock Member: "..settings.lock_member.."\n⚙Lock RTL: "..settings.lock_rtl.."\n⚙ Lock Tgservice: "..settings.lock_tgservice.."\n⚙Lock sticker: "..settings.lock_sticker.."\n⚙ Lock tag: "..settings.tag.."\n⚙Lock english: "..settings.english.."\n⚙Lock join: "..settings.join.."\n⚙Lock leave: "..settings.leave.."\n⚙ Lock bots: "..bots_protection.."\n⚙group type: "..gp_type.."\n⚙Public: "..settings.public.."\n ⚙Strict settings: "..settings.strict.."\n  ➖➖➖➖➖➖➖➖➖➖➖\n🔑switch:\n 🗝Etehad: "..settings.etehad.."\n🗝all: "..settings.all.."\n〰〰〰〰〰〰〰〰〰〰〰\n🔘 @dimon_team"  return text
+  end
 local function promote_admin(receiver, member_username, user_id)
   local data = load_data(_config.moderation.data)
   local group = string.gsub(receiver, 'channel#id', '')
