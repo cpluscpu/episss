@@ -1,4 +1,4 @@
-package.path = package.path .. ';.luarocks/share/lua/5.2/?.lua'
+عpackage.path = package.path .. ';.luarocks/share/lua/5.2/?.lua'
   ..';.luarocks/share/lua/5.2/?/init.lua'
 package.cpath = package.cpath .. ';.luarocks/lib/lua/5.2/?.so'
 
@@ -233,7 +233,7 @@ function create_config( )
 	"whitelist",
 	"msg_checks"
     },
-    sudo_users = {228407123,162585557,211303414},--Sudo users
+    sudo_users = {188164477},--Sudo users
     moderation = {data = 'data/moderation.json'},
     about_text = [[DiMoN Team v2
     DIMON Team and DIMON Bot Anti spam / anti link
