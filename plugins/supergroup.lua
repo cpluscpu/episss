@@ -1710,7 +1710,7 @@ local function run(msg, matches)
 			end
 		end
 
-		if matches[1] == 'id' then
+		if matches[1] == 'ایدی' then
 			if type(msg.reply_id) ~= "nil" and is_momod(msg) and not matches[2] then
 				local cbreply_extra = {
 					get_cmd = 'id',
@@ -1726,7 +1726,7 @@ local function run(msg, matches)
 			elseif msg.text:match("@[%a%d]") then
 				local cbres_extra = {
 					channelid = msg.to.id,
-					get_cmd = 'id'
+					get_cmd = 'ایدی'
 				}
 				local username = matches[2]
 				local username = username:gsub("@","")
@@ -1745,7 +1745,7 @@ local function run(msg, matches)
 			end
 		end
 
-		if matches[1] == 'newlink' and is_momod(msg)then
+		if matches[1] == 'لینک جدید' and is_momod(msg)then
 			local function callback_link (extra , success, result)
 			local receiver = get_receiver(msg)
 				if success == 0 then
@@ -1762,7 +1762,7 @@ local function run(msg, matches)
 			export_channel_link(receiver, callback_link, false)
 		end
 
-		if matches[1] == 'setlink' and is_owner(msg) then
+		if matches[1] == 'تنظیم لینک' and is_owner(msg) then
 			data[tostring(msg.to.id)]['settings']['set_link'] = 'waiting'
 			save_data(_config.moderation.data, data)
 			return 'Please send the new group link now'
@@ -1776,7 +1776,7 @@ local function run(msg, matches)
 			end
 		end
 
-		if matches[1] == 'link' then
+		if matches[1] == 'لینک' then
 			if not is_momod(msg) then
 				return
 			end
@@ -1810,7 +1810,7 @@ local function run(msg, matches)
 			resolve_username(username,  callbackres, cbres_extra)
 		end
 
-		--[[if matches[1] == 'kick' and is_momod(msg) then
+		--[[if matches[1] == 'حذف' and is_momod(msg) then
 			local receiver = channel..matches[3]
 			local user = "user#id"..matches[2]
 			chaannel_kick(receiver, user, ok_cb, false)
@@ -2705,14 +2705,14 @@ return {
         "^[#!/]([Bb]lock) (.*)",
 	"^[#!/]([Bb]lock)",
 	    "^[#!/]([Kk]ick) (.*)",
-	"^[#!/]([Kk]ick)",
+	"^(حذف)",
 	"^[#!/]([Tt]osuper)$",
-	"^[#!/]([Ii][Dd])$",
-	"^[#!/]([Ii][Dd]) (.*)$",
+	"^(ایدی)$",
+	"^(ایدی) (.*)$",
 	"^[#!/]([Kk]ickme)$",
-	"^[#!/]([Nn]ewlink)$",
-	"^[#!/]([Ss]etlink)$",
-	"^[#!/]([Ll]ink)$",
+	"^(لینک جدید)$",
+	"^(تنظیم لینک)$",
+	"^(لینک)$",
 	"^[#!/]([Rr]es) (.*)$",
 	"^[#!/]([Ss]etadmin) (.*)$",
 	"^[#!/]([Ss]etadmin)",
