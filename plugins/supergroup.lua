@@ -2398,7 +2398,7 @@ local function run(msg, matches)
 			end
 		end
 
-		if matches[1] == 'setflood' then
+		if matches[1] == 'حساسیت' then
 			if not is_momod(msg) then
 				return
 			end
@@ -2614,13 +2614,13 @@ local function run(msg, matches)
 			return muted_user_list(chat_id)
 		end
 
-		if matches[1] == 'settings' and is_momod(msg) then
+		if matches[1] == 'تنظیمات' and is_momod(msg) then
 			local target = msg.to.id
 			savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested SuperGroup settings ")
 			return show_supergroup_settingsmod(msg, target)
 		end
 
-		if matches[1] == 'rules' then
+		if matches[1] == 'قوانین' then
 			savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested group rules")
 			return get_rules(msg, data)
 		end
@@ -2739,9 +2739,9 @@ return {
 	"^[#!/]([Uu]nsilent)$",
 	"^[#!/]([Uu]nsilent) (.*)$",
 	"^[#!/]([Pp]ublic) (.*)$",
-	"^[#!/]([Ss]ettings)$",
-	"^[#!/]([Rr]ules)$",
-	"^[#!/]([Ss]etflood) (%d+)$",
+	"^(تنظیمات)$",
+	"^[قوانین)$",
+	"^(حساسیت) (%d+)$",
 	"^[#!/]([Cc]lean) (.*)$",
 	"^(راهنما)$",
 	"^[#!/]([Mm]uteslist)$",
