@@ -1587,7 +1587,7 @@ local function run(msg, matches)
 	local print_name = user_print_name(msg.from):gsub("‮", "")
 	local name_log = print_name:gsub("_", " ")
 	local data = load_data(_config.moderation.data)
-		if matches[1] == 'add' and not matches[2] then
+		if matches[1] == 'افزودن' and not matches[2] then
 			if not is_admin1(msg) and not is_support(support_id) then
 				return
 			end
@@ -1601,7 +1601,7 @@ local function run(msg, matches)
 			channel_set_admin(receiver, 'user#id'..msg.from.id, ok_cb, false)
 		end
 
-		if matches[1] == 'rem' and is_admin1(msg) and not matches[2] then
+		if matches[1] == 'حذف' and is_admin1(msg) and not matches[2] then
 			if not is_super_group(msg) then
 				return reply_msg(msg.id, 'SuperGroup is not added.', ok_cb, false)
 			end
@@ -1810,7 +1810,7 @@ local function run(msg, matches)
 			resolve_username(username,  callbackres, cbres_extra)
 		end
 
-		--[[if matches[1] == 'حذف' and is_momod(msg) then
+		--[[if matches[1] == 'کیک' and is_momod(msg) then
 			local receiver = channel..matches[3]
 			local user = "user#id"..matches[2]
 			chaannel_kick(receiver, user, ok_cb, false)
@@ -2692,8 +2692,8 @@ end
 
 return {
   patterns = {
-	"^[#!/]([Aa]dd)$",
-	"^[#!/]([Rr]em)$",
+	"^(افزودن)$",
+	"^(حذف)$",
 	"^[#!/]([Mm]ove) (.*)$",
 	"^[#!/]([Gg]pinfo)$",
 	"^[#!/]([Aa]dmins)$",
@@ -2704,8 +2704,8 @@ return {
 	"^[#!/]([Kk]icked)$",
         "^[#!/]([Bb]lock) (.*)",
 	"^[#!/]([Bb]lock)",
-	    "^[#!/]([Kk]ick) (.*)",
-	"^(حذف)",
+	    "^(کیک) (.*)",
+	"^(کیک)",
 	"^[#!/]([Tt]osuper)$",
 	"^(ایدی)$",
 	"^(ایدی) (.*)$",
