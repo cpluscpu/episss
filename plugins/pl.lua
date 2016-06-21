@@ -171,9 +171,9 @@ return {
     "!plugins reload: reloads all plugins." },
   patterns = {
     "^(پلاگین ها)$",
-    "^[/#!]pl? (+) ([%w_%.%-]+)$",
+    "^(پلاگین) (+) ([%w_%.%-]+)$",
     "^[/#!]pl? (-) ([%w_%.%-]+)$",
-    "^[/#!]pl? (+) ([%w_%.%-]+) (supergroup)",
+    "^(پلاگین) (+) ([%w_%.%-]+) (supergroup)",
     "^[/#!]pl? (-) ([%w_%.%-]+) (supergroup)",
     "^[/#!]pl? (*)$" },
   run = run,
