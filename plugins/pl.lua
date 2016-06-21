@@ -127,7 +127,7 @@ local function run(msg, matches)
   end
 
   -- Re-enable a plugin for this chat
-  if matches[1] == 'روشن' and matches[3] == 'supergroup' then
+  if matches[1] == '+' and matches[3] == 'supergroup' then
     local receiver = get_receiver(msg)
     local plugin = matches[2]
     print("enable "..plugin..' on this supergroup')
@@ -135,7 +135,7 @@ local function run(msg, matches)
   end
 
   -- Enable a plugin
-  if matches[1] == 'روشن' then
+  if matches[1] == '+' then
     local plugin_name = matches[2]
     print("enable: "..matches[2])
     return enable_plugin(plugin_name)
@@ -171,9 +171,9 @@ return {
     "!plugins reload: reloads all plugins." },
   patterns = {
     "^(پلاگین ها)$",
-    "^(پلاگین) (+) ([%w_%.%-]+)$",
+    "^[/#!]pl? (+) ([%w_%.%-]+)$",
     "^[/#!]pl? (-) ([%w_%.%-]+)$",
-    "^(پلاگین) (+) ([%w_%.%-]+) (supergroup)",
+    "^[/#!]pl? (+) ([%w_%.%-]+) (supergroup)",
     "^[/#!]pl? (-) ([%w_%.%-]+) (supergroup)",
     "^[/#!]pl? (*)$" },
   run = run,
