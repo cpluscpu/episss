@@ -229,31 +229,59 @@ local function unlock_group_all(msg, data, target)
   end
 end
 
-local function lock_group_etehad(msg, data, target)
+local function lock_group_all(msg, data, target)
   if not is_momod(msg) then
     return
   end
-  local group_etehad_lock = data[tostring(target)]['settings']['etehad']
-  if group_etehad_lock == 'yes' then
-    return 'etehad setting is already locked'
+  local group_all_lock = data[tostring(target)]['settings']['all']
+  if group_all_lock == 'yes' then
+    return 'all setting is already locked'
   else
-    data[tostring(target)]['settings']['etehad'] = 'yes'
+    data[tostring(target)]['settings']['all'] = 'yes'
     save_data(_config.moderation.data, data)
-    return 'etehad setting has been locked'
+    return 'all setting has been locked'
   end
 end
 
-local function unlock_group_etehad(msg, data, target)
+local function unlock_group_all(msg, data, target)
   if not is_momod(msg) then
     return
   end
-  local group_etehad_lock = data[tostring(target)]['settings']['etehad']
+  local group_all_lock = data[tostring(target)]['settings']['all']
+  if group_all_lock == 'no' then
+    return 'all setting is not locked'
+  else
+    data[tostring(target)]['settings']['all'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'all setting has been unlocked'
+  end
+end
+
+local function lock_group_username(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_username_lock = data[tostring(target)]['settings']['username']
+  if group_username_lock == 'yes' then
+    return 'username setting is already locked'
+  else
+    data[tostring(target)]['settings']['username'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'username setting has been locked'
+  end
+end
+
+local function unlock_group_username(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_username_lock = data[tostring(target)]['settings']['username']
   if group_etehad_lock == 'no' then
     return 'etehad setting is not locked'
   else
-    data[tostring(target)]['settings']['etehad'] = 'no'
+    data[tostring(target)]['settings']['username'] = 'no'
     save_data(_config.moderation.data, data)
-    return 'etehad setting has been unlocked'
+    return 'username setting has been unlocked'
   end
 end
 
@@ -1033,7 +1061,7 @@ function show_supergroup_settingsmod(msg, target)
   local gp_type = data[tostring(msg.to.id)]['group_type']
   
   local settings = data[tostring(target)]['settings']
-  local text = "🔶SuperGroup Name : "..msg.to.print_name.."\n 🔷requester: @"..msg.from.username.."\n➖➖➖➖➖➖➖➖➖➖➖➖➖\n ⚙SuperGroup settings⚙:\n⚙ Lock links : "..settings.lock_link.."\n ⚙Lock flood: "..settings.flood.."\n⚙Flood sensitivity : "..NUM_MSG_MAX.."\n ⚙Lock spam: "..settings.lock_spam.."\n⚙Lock Arabic: "..settings.lock_arabic.."\n⚙ Lock Member: "..settings.lock_member.."\n⚙Lock RTL: "..settings.lock_rtl.."\n⚙ Lock Tgservice: "..settings.lock_tgservice.."\n⚙Lock sticker: "..settings.lock_sticker.."\n⚙ Lock tag: "..settings.tag.."\n⚙Lock english: "..settings.english.."\n⚙Lock join: "..settings.join.."\n⚙Lock leave: "..settings.leave.."\n⚙ Lock bots: "..bots_protection.."\n⚙group type: "..gp_type.."\n⚙Public: "..settings.public.."\n ⚙Strict settings: "..settings.strict.."\n  ➖➖➖➖➖➖➖➖➖➖➖➖➖\n🔑switch:\n 🗝Etehad: "..settings.etehad.."\n🗝all: "..settings.all.."\n〰〰〰〰〰〰〰〰〰〰〰〰〰\n🔘 @dimon_team"  return text
+  local text = "🔶SuperGroup Name : "..msg.to.print_name.."\n 🔷requester: @"..msg.from.username.."\n➖➖➖➖➖➖➖➖➖➖➖➖➖\n ⚙SuperGroup settings⚙:\n⚙ Lock links : "..settings.lock_link.."\n⚙Lock flood: "..settings.flood.."\n⚙Flood sensitivity : "..NUM_MSG_MAX.."\n⚙Lock username: "..settings.username.."\n⚙Lock spam: "..settings.lock_spam.."\n⚙Lock Arabic: "..settings.lock_arabic.."\n⚙ Lock Member: "..settings.lock_member.."\n⚙Lock RTL: "..settings.lock_rtl.."\n⚙ Lock Tgservice: "..settings.lock_tgservice.."\n⚙Lock sticker: "..settings.lock_sticker.."\n⚙ Lock tag: "..settings.tag.."\n⚙Lock english: "..settings.english.."\n⚙Lock join: "..settings.join.."\n⚙Lock leave: "..settings.leave.."\n⚙ Lock bots: "..bots_protection.."\n⚙group type: "..gp_type.."\n⚙Public: "..settings.public.."\n⚙Strict settings: "..settings.strict.."\n  ➖➖➖➖➖➖➖➖➖➖➖➖➖\n🔑switch:\n 🗝Etehad: "..settings.etehad.."\n🗝all: "..settings.all.."\n〰〰〰〰〰〰〰〰〰〰〰〰〰\n🔘 @dimon_team"  return text
   end
 local function promote_admin(receiver, member_username, user_id)
   local data = load_data(_config.moderation.data)
@@ -2761,4 +2789,3 @@ return {
   run = run,
   pre_process = pre_process
 }
-
